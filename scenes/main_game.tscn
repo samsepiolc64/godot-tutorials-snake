@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg6q2hahwmkfd"]
+
+[ext_resource type="Script" uid="uid://dfd08uoficsn4" path="res://scripts/main_game.gd" id="1_72e8q"]
+[ext_resource type="PackedScene" uid="uid://1co2amphm33o" path="res://scenes/head.tscn" id="2_72e8q"]
+
+[node name="MainGame" type="Node"]
+script = ExtResource("1_72e8q")
+
+[node name="Head" parent="." instance=ExtResource("2_72e8q")]
+unique_name_in_owner = true
+position = Vector2(440, 440)

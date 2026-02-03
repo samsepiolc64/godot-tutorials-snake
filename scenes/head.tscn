@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1co2amphm33o"]
+
+[ext_resource type="Script" uid="uid://b5gisph2f1g2l" path="res://scripts/head.gd" id="1_d75dd"]
+[ext_resource type="Texture2D" uid="uid://cp6xsjpeidkm4" path="res://assets/Snake_spritesheet.png" id="1_nsfte"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d75dd"]
+size = Vector2(40, 40)
+
+[node name="Head" type="Area2D"]
+script = ExtResource("1_d75dd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+texture = ExtResource("1_nsfte")
+region_enabled = true
+region_rect = Rect2(80, 40, 40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d75dd")
