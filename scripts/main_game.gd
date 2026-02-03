@@ -2,6 +2,7 @@ class_name MainGame extends Node
 
 
 @onready var head: Head = %Head as Head #before change Head "%Dostep jako unikalna nazwa"
+@onready var bounds: Bounds = %Bounds as Bounds
 
 var time_between_moves: float = 1000.0
 var time_since_last_move: float = 0
@@ -35,4 +36,5 @@ func _physics_process(delta: float) -> void:
 
 func update_snake():
 	var new_pos:Vector2 = head.position + move_dir * Global.GRID_SIZE
+	new_pos = bounds.wrap_vector(new_pos) # check if head is out of area
 	head.move_to(new_pos)
