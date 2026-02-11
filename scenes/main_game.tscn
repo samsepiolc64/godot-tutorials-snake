@@ -61,6 +61,7 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 position = Vector2(800, 800)
 
-[node name="Spawner" type="Node2D" parent="."]
+[node name="Spawner" type="Node2D" parent="." node_paths=PackedStringArray("bounds")]
 unique_name_in_owner = true
 script = ExtResource("5_ipu61")
+bounds = NodePath("../Bounds")

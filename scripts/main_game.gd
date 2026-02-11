@@ -5,13 +5,14 @@ class_name MainGame extends Node
 @onready var bounds: Bounds = %Bounds as Bounds
 @onready var spawner: Spawner = %Spawner as Spawner
 
-var time_between_moves: float = 1000.0
+var time_between_moves: float = 500.0
 var time_since_last_move: float = 0
 var speed: float = 1000.0
 var move_dir:Vector2 = Vector2.RIGHT #Vector2(1,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	head.food_eaten.connect(_on_food_eaten)
 	spawner.spawn_food()
 	pass
 
@@ -40,3 +41,13 @@ func update_snake():
 	var new_pos:Vector2 = head.position + move_dir * Global.GRID_SIZE
 	new_pos = bounds.wrap_vector(new_pos) # check if head is out of area
 	head.move_to(new_pos)
+
+func _on_food_eaten():
+	#spawn more food
+	spawner.call_deferred("spawn_food")
+	#add tail
+	
+	#inc speed
+	
+	#update score
+	
