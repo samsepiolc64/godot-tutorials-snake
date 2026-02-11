@@ -3,6 +3,7 @@ class_name MainGame extends Node
 
 @onready var head: Head = %Head as Head #before change Head "%Dostep jako unikalna nazwa"
 @onready var bounds: Bounds = %Bounds as Bounds
+@onready var spawner: Spawner = %Spawner as Spawner
 
 var time_between_moves: float = 1000.0
 var time_since_last_move: float = 0
@@ -11,6 +12,7 @@ var move_dir:Vector2 = Vector2.RIGHT #Vector2(1,0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	spawner.spawn_food()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

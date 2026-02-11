@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dg6q2hahwmkfd"]
+[gd_scene load_steps=8 format=4 uid="uid://dg6q2hahwmkfd"]
 
 [ext_resource type="Script" uid="uid://dfd08uoficsn4" path="res://scripts/main_game.gd" id="1_72e8q"]
 [ext_resource type="Texture2D" uid="uid://bvqsrn1nsactd" path="res://assets/grass.png" id="2_0rdsr"]
 [ext_resource type="PackedScene" uid="uid://1co2amphm33o" path="res://scenes/head.tscn" id="2_72e8q"]
 [ext_resource type="Script" uid="uid://dbk6krdvafxlg" path="res://scripts/bounds.gd" id="3_d2op2"]
+[ext_resource type="Script" uid="uid://ibdt6s3uncsr" path="res://scripts/spawner.gd" id="5_ipu61"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rdsr"]
 texture = ExtResource("2_0rdsr")
@@ -38,7 +39,7 @@ texture_region_size = Vector2i(40, 40)
 tile_size = Vector2i(40, 40)
 sources/0 = SubResource("TileSetAtlasSource_0rdsr")
 
-[node name="MainGame" type="Node"]
+[node name="Gameplay" type="Node"]
 script = ExtResource("1_72e8q")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -59,3 +60,7 @@ unique_name_in_owner = true
 [node name="LowerRight" type="Marker2D" parent="Bounds"]
 unique_name_in_owner = true
 position = Vector2(800, 800)
+
+[node name="Spawner" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_ipu61")

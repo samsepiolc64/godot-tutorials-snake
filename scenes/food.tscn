@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bny6cidnl4mx6"]
+
+[ext_resource type="Texture2D" uid="uid://b8s2yoo8evxv3" path="res://assets/apple.png" id="1_xven1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_af40f"]
+
+[node name="Food" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.415, 1.415)
+shape = SubResource("CircleShape2D_af40f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xven1")
